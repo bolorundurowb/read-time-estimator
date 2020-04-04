@@ -9,7 +9,18 @@ namespace ReadTimeEstimator.Implementations.Estimators
         /// <inherit />
         public double ReadTimeInMinutes(string markup)
         {
+            if (markup == null)
+            {
+                return 0.0;
+            }
+
             var trimmedString = markup.Trim();
+
+            if (trimmedString.Length == 0)
+            {
+                return 0.0;
+            }
+
             var patterns = new MarkdownPatterns();
             var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
             var wordsReadTime = trimmedString.GetWordReadTimeInMinutes(patterns);
