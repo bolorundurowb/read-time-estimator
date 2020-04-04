@@ -5,8 +5,8 @@ namespace ReadTimeEstimator.Implementations.Patterns
     public class MarkdownPatterns : IMarkupPatterns
     {
         /// <inherit />
-        public string ImagePattern { get; }
-        
+        public string ImagePattern => "(?:!\\[(.*?)\\]\\((.*?)\\))";
+
         /// <inherit />
         public string TagsPattern { get; }
 

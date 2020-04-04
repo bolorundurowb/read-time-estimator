@@ -1,3 +1,4 @@
+using Markdig;
 using ReadTimeEstimator.Extensions;
 using ReadTimeEstimator.Implementations.Patterns;
 using ReadTimeEstimator.Interfaces;
@@ -21,9 +22,10 @@ namespace ReadTimeEstimator.Implementations.Estimators
                 return 0.0;
             }
 
-            var patterns = new MarkdownPatterns();
-            var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
-            var wordsReadTime = trimmedString.GetWordReadTimeInMinutes(patterns);
+            var html = Markdown.ToHtml(trimmedString);
+            var patterns = new HtmlPatterns();
+            var imageReadTime = html.GetImageReadTimeInMinutes(patterns);
+            var wordsReadTime = html.GetWordReadTimeInMinutes(patterns);
             return imageReadTime + wordsReadTime;
         }
 

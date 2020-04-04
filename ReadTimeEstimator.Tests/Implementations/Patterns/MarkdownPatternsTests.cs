@@ -19,7 +19,7 @@ namespace ReadTimeEstimator.Tests.Implementations.Patterns
         {
             var pattern = new MarkdownPatterns();
             pattern.Should().NotBeNull();
-            pattern.ImagePattern.Should().BeNull();
+            pattern.ImagePattern.Should().Be("(?:!\\[(.*?)\\]\\((.*?)\\))");
             pattern.TagsPattern.Should().BeNull();
             pattern.WordsPattern.Should().Be("\\w+");
             pattern.EastAsianCharSetPattern.Should()
