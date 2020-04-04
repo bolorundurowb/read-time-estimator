@@ -11,6 +11,11 @@
         <Copyright>Copyright 2020</Copyright>
         <PackageTags>dotnet, read-time, estimator</PackageTags>
         <PackageReleaseNotes>- initial release</PackageReleaseNotes>
+        <Description>A tool to determine the estimated read time for HTML or Markdown articles</Description>
+        <PackageProjectUrl>https://github.com/bolorundurowb/read-time-estimator</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/bolorundurowb/read-time-estimator/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/bolorundurowb/read-time-estimator</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
