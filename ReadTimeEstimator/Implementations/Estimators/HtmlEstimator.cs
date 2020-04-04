@@ -1,10 +1,12 @@
 using ReadTimeEstimator.Extensions;
+using ReadTimeEstimator.Implementations.Patterns;
 using ReadTimeEstimator.Interfaces;
 
 namespace ReadTimeEstimator.Implementations.Estimators
 {
     public class HtmlEstimator : IMarkupEstimator
     {
+        /// <inherit />
         public double ReadTimeInMinutes(string markup)
         {
             var trimmedString = markup.Trim();
@@ -14,6 +16,7 @@ namespace ReadTimeEstimator.Implementations.Estimators
             return imageReadTime + wordsReadTime;
         }
 
+        /// <inherit />
         public string HumanFriendlyReadTime(string markup)
         {
             var readTime = ReadTimeInMinutes(markup);

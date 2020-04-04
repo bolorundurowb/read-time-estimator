@@ -1,6 +1,6 @@
 using ReadTimeEstimator.Interfaces;
 
-namespace ReadTimeEstimator.Implementations
+namespace ReadTimeEstimator.Implementations.Patterns
 {
     public class HtmlPatterns : IMarkupPatterns
     {
