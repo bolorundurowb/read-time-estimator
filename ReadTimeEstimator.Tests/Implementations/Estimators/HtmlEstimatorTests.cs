@@ -31,5 +31,14 @@ namespace ReadTimeEstimator.Tests.Implementations.Estimators
             var time = estimator.ReadTimeInMinutes("<img /><img/> <Image></Image>");
             time.Should().Be(expectedTimeInMinutes);
         }
+
+        [Fact]
+        public void ShouldHandleMoreThenTenImagesInput()
+        {
+            var expectedTimeInMinutes = 201 / 60.0;
+            var estimator = new HtmlEstimator();
+            var time = estimator.ReadTimeInMinutes("<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>");
+            time.Should().Be(expectedTimeInMinutes);
+        }
     }
 }
