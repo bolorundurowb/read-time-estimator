@@ -21,7 +21,7 @@ namespace ReadTimeEstimator
 
         public (double, int) ImageReadTime( string input, int customImageTime = Constants.ImageReadTimeInSeconds)
         {
-            var seconds = 0.0;
+            double seconds;
             var imageCount = ImageCount(new[] {"img", "Image"}, input);
 
             if (imageCount > 10)

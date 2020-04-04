@@ -6,6 +6,8 @@ namespace ReadTimeEstimator.Interfaces
         
         string TagsPattern { get; }
         
+        string WordsPattern { get; }
+        
         string EastAsianCharSetPattern { get; }
     }
 }
