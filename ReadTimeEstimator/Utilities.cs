@@ -2,21 +2,21 @@ using System;
 
 namespace ReadTimeEstimator
 {
-    public class Utilities
+    public static class Utilities
     {
-        public string HumanizeTime(double time)
+        public static string HumanizeTime(double timeInMinutes)
         {
-            if (time < 0.5)
+            if (timeInMinutes < 0.5)
             {
                 return "less than a minute";
             }
 
-            if (time >= 0.5 && time < 1.5)
+            if (timeInMinutes >= 0.5 && timeInMinutes < 1.5)
             {
                 return "1 minute";
             }
 
-            return $"{Math.Ceiling(time)} minutes";
+            return $"{Math.Ceiling(timeInMinutes)} minutes";
         }
     }
 }
