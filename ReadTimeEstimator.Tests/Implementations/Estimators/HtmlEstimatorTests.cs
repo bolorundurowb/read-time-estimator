@@ -40,5 +40,14 @@ namespace ReadTimeEstimator.Tests.Implementations.Estimators
             var time = estimator.ReadTimeInMinutes("<Image/><Image/><Image/><Image/><Image/><img/><img/><img/><img/><img/><img/>");
             time.Should().Be(expectedTimeInMinutes);
         }
+
+        [Fact]
+        public void ShouldHandlePlainTextInput()
+        {
+            var expectedTimeInMinutes = 2 / 275.0;
+            var estimator = new HtmlEstimator();
+            var time = estimator.ReadTimeInMinutes("<div>Test String</div>");
+            time.Should().Be(expectedTimeInMinutes);
+        }
     }
 }
