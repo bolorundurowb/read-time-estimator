@@ -58,5 +58,13 @@ namespace ReadTimeEstimator.Tests.Implementations.Estimators
             var time = estimator.ReadTimeInMinutes("<div>测试字符串</div>");
             time.Should().Be(expectedTimeInMinutes);
         }
+
+        [Fact]
+        public void ShouldHandleHumanResponseForEastAsianTextInput()
+        {
+            var estimator = new HtmlEstimator();
+            var readTime = estimator.HumanFriendlyReadTime("<div>测试字符串</div>");
+            readTime.Should().Be("less than a minute");
+        }
     }
 }
