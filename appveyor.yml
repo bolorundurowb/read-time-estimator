@@ -1,0 +1,12 @@
+version: '1.{build}'
+image: Visual Studio 2019
+before_build:
+  - choco install codecov
+  - cmd: dotnet --version
+  - cmd: dotnet restore --verbosity m
+build_script:
+  - cmd: dotnet build
+test_script:
+  - cmd: dotnet tool install Codecov.Tool --version 1.10.0 --tool-path tools
+  - cmd: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+  - codecov -f ".\ReadTimeEstimator.Tests\coverage.opencover.xml"
