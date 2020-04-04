@@ -51,5 +51,16 @@ namespace ReadTimeEstimator
             var matches = regex.Match(input);
             return matches.Length;
         }
+
+        public (int, double, string) OtherLanguagesReadTime(string input)
+        {
+            var pattern = "[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]";
+            var regex = new Regex(pattern, RegexOptions.Multiline);
+            var matches = regex.Match(input);
+            var count = matches.Length;
+            var time = count / (double) Constants.EastAsianCharactersPerMinute;
+            var formattedString = regex.Replace(input, "");
+            return (count, time, formattedString);
+        }
     }
 }
