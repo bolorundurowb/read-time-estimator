@@ -1,4 +1,3 @@
-using System;
 using FluentAssertions;
 using ReadTimeEstimator.Implementations.Estimators;
 using Xunit;
