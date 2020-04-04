@@ -5,6 +5,12 @@
         <Product>Read Time Estimator</Product>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Read Time Estimator</Title>
+        <Authors>Winner-Timothy Bolorunduro</Authors>
+        <Copyright>Copyright 2020</Copyright>
+        <PackageTags>dotnet, read-time, estimator</PackageTags>
+        <PackageReleaseNotes>- initial release</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
