@@ -5,10 +5,10 @@ namespace ReadTimeEstimator.Implementations.Patterns
     public class HtmlPatterns : IMarkupPatterns
     {
         /// <inherit />
-        public string ImagePattern => "<({img|Image})([\\w\\W]+?)[\\/]?>";
+        public string ImagePattern => "<(img|Image)([\\w\\W]+?)[\\/]?>";
 
         /// <inherit />
-        public string TagsPattern => "<\\w+(\\s+(\"[^\"]*\"|\\\'[^\\\']*\'|[^>])+)?>|<\\/\\w+>";
+        public string TagsPattern => "<[^>]*>";
 
         /// <inherit />
         public string WordsPattern => "\\w+";

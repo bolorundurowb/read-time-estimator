@@ -8,22 +8,22 @@ namespace ReadTimeEstimator.Extensions
         private static int GetArticleImageCount(this string input, IMarkupPatterns markupPatterns)
         {
             var regex = new Regex(markupPatterns.ImagePattern, RegexOptions.Multiline);
-            var matches = regex.Match(input);
-            return matches.Length;
+            var matches = regex.Matches(input);
+            return matches.Count;
         }
         
         private static int GetArticleWordCount(this string input, IMarkupPatterns markupPatterns)
         {
             var regex = new Regex(markupPatterns.WordsPattern, RegexOptions.Multiline);
-            var matches = regex.Match(input);
-            return matches.Length;
+            var matches = regex.Matches(input);
+            return matches.Count;
         }
         
         private static (double, string) EstimateAndStripEastAsianCharacters(this string input, IMarkupPatterns markupPatterns)
         {
             var regex = new Regex(markupPatterns.EastAsianCharSetPattern, RegexOptions.Multiline);
-            var matches = regex.Match(input);
-            var count = matches.Length;
+            var matches = regex.Matches(input);
+            var count = matches.Count;
             var readTimeInMinutes = count / (double) Constants.EastAsianCharactersPerMinute;
             var cleanedString = regex.Replace(input, "");
             return (readTimeInMinutes, cleanedString);
