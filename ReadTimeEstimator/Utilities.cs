@@ -43,5 +43,13 @@ namespace ReadTimeEstimator
             var regex = new Regex(pattern, RegexOptions.Multiline | RegexOptions.IgnoreCase);
             return regex.Replace(input, "");
         }
+
+        public int WordCount(string input)
+        {
+            var pattern = "\\w+";
+            var regex = new Regex(pattern, RegexOptions.Multiline);
+            var matches = regex.Match(input);
+            return matches.Length;
+        }
     }
 }
