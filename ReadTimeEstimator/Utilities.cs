@@ -62,5 +62,36 @@ namespace ReadTimeEstimator
             var formattedString = regex.Replace(input, "");
             return (count, time, formattedString);
         }
+
+        public (int, double, double, int) WordsReadTime(string input, int wordsPerMin = Constants.WordsPerMinute)
+        {
+            var (characterCount, otherLanguageTime, formattedString) = OtherLanguagesReadTime(input);
+            var wordCount = WordCount(formattedString);
+            var wordTime = wordCount / (double) wordsPerMin;
+            return (characterCount, otherLanguageTime, wordTime, wordCount);
+        }
+
+        public string HumanizeTime(double time)
+        {
+            if (time < 0.5)
+            {
+                return "less than a minute";
+            }
+
+            if (time >= 0.5 && time < 1.5)
+            {
+                return "1 minute";
+            }
+
+            return $"{Math.Ceiling(time)} minutes";
+        }
+
+        public string ReadTime(string input)
+        {
+            var (imageTime, imageCount) = ImageReadTime(input);
+            var strippedString = StripTags(StripWhitespace(input));
+            var (characterCount, otherLanguageTime, wordTime, wordCount) = WordsReadTime(strippedString);
+            return HumanizeTime(imageTime + wordTime);
+        }
     }
 }
