@@ -15,7 +15,7 @@
         <RepositoryType>git</RepositoryType>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
-        <Version>1.0.1</Version>
+        <Version>1.1.0</Version>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
