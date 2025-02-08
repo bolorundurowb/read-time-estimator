@@ -1,24 +1,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Company>bolorundurowb</Company>
-        <Product>Read Time Estimator</Product>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Title>Read Time Estimator</Title>
         <Authors>Winner-Timothy Bolorunduro</Authors>
-        <Copyright>Copyright 2020</Copyright>
-        <PackageTags>dotnet, read-time, estimator</PackageTags>
+        <Product>Read Time Estimator</Product>
+        <Title>Read Time Estimator</Title>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Copyright>©2020-2025, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
+        <PackageTags>dotnet, read-time, estimator, markdown, html</PackageTags>
         <PackageReleaseNotes>- initial release</PackageReleaseNotes>
         <Description>A tool to determine the estimated read time for HTML or Markdown articles</Description>
         <PackageProjectUrl>https://github.com/bolorundurowb/read-time-estimator</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/bolorundurowb/read-time-estimator/blob/master/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/bolorundurowb/read-time-estimator</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <Version>1.0.1</Version>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Markdig" Version="0.18.3" />
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Markdig" Version="0.40.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="ReadTimeEstimator.Tests"/>
     </ItemGroup>
 </Project>

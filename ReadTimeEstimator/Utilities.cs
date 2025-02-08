@@ -1,30 +1,22 @@
 using System;
 
-namespace ReadTimeEstimator
+namespace ReadTimeEstimator;
+
+/// <summary>
+/// class to hold shared utilities
+/// </summary>
+internal static class Utilities
 {
     /// <summary>
-    /// class to hold shared utilities
+    /// Print out time in a human-readable form
     /// </summary>
-    public static class Utilities
-    {
-        /// <summary>
-        /// Print out time in a human readable form
-        /// </summary>
-        /// <param name="timeInMinutes">Time in minutes</param>
-        /// <returns>A formatted string</returns>
-        public static string HumanizeTime(double timeInMinutes)
+    /// <param name="timeInMinutes">Time in minutes</param>
+    /// <returns>A formatted string</returns>
+    public static string HumanizeTime(double timeInMinutes) =>
+        timeInMinutes switch
         {
-            if (timeInMinutes < 0.5)
-            {
-                return "less than a minute";
-            }
-
-            if (timeInMinutes >= 0.5 && timeInMinutes < 1.5)
-            {
-                return "1 minute";
-            }
-
-            return $"{Math.Ceiling(timeInMinutes)} minutes";
-        }
-    }
+            < 0.5 => "less than a minute",
+            >= 0.5 and < 1.5 => "1 minute",
+            _ => $"{Math.Ceiling(timeInMinutes)} minutes"
+        };
 }

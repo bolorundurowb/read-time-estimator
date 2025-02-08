@@ -2,36 +2,31 @@ using ReadTimeEstimator.Extensions;
 using ReadTimeEstimator.Implementations.Patterns;
 using ReadTimeEstimator.Interfaces;
 
-namespace ReadTimeEstimator.Implementations.Estimators
+namespace ReadTimeEstimator.Implementations.Estimators;
+
+public class HtmlEstimator : IMarkupEstimator
 {
-    public class HtmlEstimator : IMarkupEstimator
+    /// <inherit />
+    public double ReadTimeInMinutes(string? markup)
     {
-        /// <inherit />
-        public double ReadTimeInMinutes(string markup)
-        {
-            if (markup == null)
-            {
-                return 0.0;
-            }
-            
-            var trimmedString = markup.Trim();
+        if (markup == null) 
+            return 0.0;
 
-            if (trimmedString.Length == 0)
-            {
-                return 0.0;
-            }
-            
-            var patterns = new HtmlPatterns();
-            var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
-            var wordsReadTime = trimmedString.GetWordReadTimeInMinutes(patterns);
-            return imageReadTime + wordsReadTime;
-        }
+        var trimmedString = markup.Trim();
 
-        /// <inherit />
-        public string HumanFriendlyReadTime(string markup)
-        {
-            var readTime = ReadTimeInMinutes(markup);
-            return Utilities.HumanizeTime(readTime);
-        }
+        if (trimmedString.Length == 0) 
+            return 0.0;
+
+        var patterns = new HtmlPatterns();
+        var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
+        var wordsReadTime = trimmedString.GetWordReadTimeInMinutes(patterns);
+        return imageReadTime + wordsReadTime;
+    }
+
+    /// <inherit />
+    public string HumanFriendlyReadTime(string markup)
+    {
+        var readTime = ReadTimeInMinutes(markup);
+        return Utilities.HumanizeTime(readTime);
     }
 }
