@@ -10,7 +10,7 @@ public class HtmlPatternsTests
     [Fact]
     public void ShouldInstantiatePatternSuccessfully()
     {
-        Action action = () => new HtmlPatterns();
+        Action action = () => _ = new HtmlPatterns();
         action.Should().NotThrow();
     }
 
