@@ -8,7 +8,7 @@ public class MarkdownPatterns : IMarkupPatterns
     public string ImagePattern => "(?:!\\[(.*?)\\]\\((.*?)\\))";
 
     /// <inherit />
-    public string TagsPattern { get; }
+    public string? TagsPattern => null;
 
     /// <inherit />
     public string WordsPattern => "\\w+";

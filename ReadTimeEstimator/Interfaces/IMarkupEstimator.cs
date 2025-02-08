@@ -13,6 +13,6 @@ public interface IMarkupEstimator
     /// get the reading time for an article
     /// </summary>
     /// <param name="markup">markup string</param>
-    /// <returns>The human readable read time</returns>
+    /// <returns>The human-readable read time</returns>
     string HumanFriendlyReadTime(string markup);
 }

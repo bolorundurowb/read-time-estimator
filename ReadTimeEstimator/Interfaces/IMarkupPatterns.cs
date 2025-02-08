@@ -10,7 +10,7 @@ public interface IMarkupPatterns
     /// <summary>
     /// Pattern to determine what is mark up and what is content
     /// </summary>
-    string TagsPattern { get; }
+    string? TagsPattern { get; }
         
     /// <summary>
     /// Pattern to determine what a word is
