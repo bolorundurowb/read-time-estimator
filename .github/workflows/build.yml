@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOTNET_VERSION: "8.0.x"
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }} # Ensure you add your Codecov token to GitHub Secrets
+      DOTNET_VERSION: "8.x"
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore dependencies
         run: dotnet restore
@@ -36,7 +36,7 @@ jobs:
           dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: '**/*.trx'
