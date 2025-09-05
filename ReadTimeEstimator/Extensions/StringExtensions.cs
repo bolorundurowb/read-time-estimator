@@ -12,6 +12,13 @@ internal static class StringExtensions
         return matches.Count;
     }
 
+    private static int GetArticleCodeBlocksCount(this string input, IMarkupPatterns markupPatterns)
+    {
+        var regex = new Regex(markupPatterns.CodeBlocksPattern, RegexOptions.Multiline);
+        var matches = regex.Matches(input);
+        return matches.Count;
+    }
+
     private static int GetArticleWordCount(this string input, IMarkupPatterns markupPatterns)
     {
         var regex = new Regex(markupPatterns.WordsPattern, RegexOptions.Multiline);
@@ -59,6 +66,13 @@ internal static class StringExtensions
         }
 
         // Convert the total read time from seconds to minutes
+        return seconds / 60.0;
+    }
+
+    public static double GetCodeBlocksPenaltyInMinutes(this string input, IMarkupPatterns markupPatterns)
+    {
+        var codeBlockCount = input.GetArticleCodeBlocksCount(markupPatterns);
+        var seconds = codeBlockCount * Constants.CodeBlockPenaltyInSeconds;
         return seconds / 60.0;
     }
 

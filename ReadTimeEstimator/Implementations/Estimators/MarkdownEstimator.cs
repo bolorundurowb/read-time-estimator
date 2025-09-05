@@ -21,8 +21,9 @@ public class MarkdownEstimator : IMarkupEstimator
         var html = Markdown.ToHtml(trimmedString);
         var patterns = new HtmlPatterns();
         var imageReadTime = html.GetImageReadTimeInMinutes(patterns);
+        var codeBlocksPenalty = html.GetCodeBlocksPenaltyInMinutes(patterns);
         var wordsReadTime = html.GetWordReadTimeInMinutes(patterns);
-        return imageReadTime + wordsReadTime;
+        return imageReadTime + codeBlocksPenalty + wordsReadTime;
     }
 
     /// <inherit />

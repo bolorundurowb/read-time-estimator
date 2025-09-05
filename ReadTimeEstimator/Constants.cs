@@ -7,4 +7,6 @@ internal static class Constants
     public const int ImageReadTimeInSeconds = 12;
 
     public const int EastAsianCharactersPerMinute = 500;
+
+    public const int CodeBlockPenaltyInSeconds = 10;
 }

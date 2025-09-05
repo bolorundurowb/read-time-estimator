@@ -8,6 +8,9 @@ public class HtmlPatterns : IMarkupPatterns
     public string ImagePattern => "<(img|Image)([\\w\\W]+?)[\\/]?>";
 
     /// <inherit />
+    public string CodeBlocksPattern => "<pre[\\w\\W]*?>[\\w\\W]*?<\\/pre>";
+
+    /// <inherit />
     public string TagsPattern => "<[^>]*>";
 
     /// <inherit />

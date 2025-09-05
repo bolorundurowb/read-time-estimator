@@ -6,6 +6,11 @@ public interface IMarkupPatterns
     /// Pattern to find images in the presented article
     /// </summary>
     string ImagePattern { get; }
+    
+    /// <summary>
+    /// Pattern to recognize code blocks
+    /// </summary>
+    string CodeBlocksPattern { get; }
         
     /// <summary>
     /// Pattern to determine what is mark up and what is content

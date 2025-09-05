@@ -19,8 +19,9 @@ public class HtmlEstimator : IMarkupEstimator
 
         var patterns = new HtmlPatterns();
         var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
+        var codeBlocksPenalty = trimmedString.GetCodeBlocksPenaltyInMinutes(patterns);
         var wordsReadTime = trimmedString.GetWordReadTimeInMinutes(patterns);
-        return imageReadTime + wordsReadTime;
+        return imageReadTime + codeBlocksPenalty + wordsReadTime;
     }
 
     /// <inherit />
