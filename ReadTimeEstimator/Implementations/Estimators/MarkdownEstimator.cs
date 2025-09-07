@@ -1,4 +1,4 @@
-using Markdig;
+using System.Text.RegularExpressions;
 using ReadTimeEstimator.Extensions;
 using ReadTimeEstimator.Implementations.Patterns;
 using ReadTimeEstimator.Interfaces;
@@ -10,19 +10,20 @@ public class MarkdownEstimator : IMarkupEstimator
     /// <inherit />
     public double ReadTimeInMinutes(string? markup)
     {
-        if (markup == null) 
+        if (string.IsNullOrWhiteSpace(markup))
             return 0.0;
 
-        var trimmedString = markup.Trim();
+        var trimmedString = markup!.Trim();
 
-        if (trimmedString.Length == 0) 
-            return 0.0;
+        var patterns = new MarkdownPatterns();
+        var imageReadTime = trimmedString.GetImageReadTimeInMinutes(patterns);
+        var codeBlocksPenalty = trimmedString.GetCodeBlocksPenaltyInMinutes(patterns);
 
-        var html = Markdown.ToHtml(trimmedString);
-        var patterns = new HtmlPatterns();
-        var imageReadTime = html.GetImageReadTimeInMinutes(patterns);
-        var codeBlocksPenalty = html.GetCodeBlocksPenaltyInMinutes(patterns);
-        var wordsReadTime = html.GetWordReadTimeInMinutes(patterns);
+        // remove markdown image constructs from word calculation to avoid counting alt text/urls as words
+        var imageRegex = new Regex(patterns.ImagePattern, RegexOptions.Multiline);
+        var textWithoutImages = imageRegex.Replace(trimmedString, string.Empty);
+
+        var wordsReadTime = textWithoutImages.GetWordReadTimeInMinutes(patterns);
         return imageReadTime + codeBlocksPenalty + wordsReadTime;
     }
 
