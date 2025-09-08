@@ -15,17 +15,13 @@
         <RepositoryType>git</RepositoryType>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="..\README.md" Pack="true" PackagePath="\"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Markdig" Version="0.41.3"/>
     </ItemGroup>
 
     <ItemGroup>
