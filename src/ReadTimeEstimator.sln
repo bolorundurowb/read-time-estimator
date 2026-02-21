@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadTimeEstimator", "ReadTimeEstimator\ReadTimeEstimator.csproj", "{5BF79E8F-4E31-4C3C-9C20-4B6FBB51A958}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadTimeEstimator.Tests", "ReadTimeEstimator.Tests\ReadTimeEstimator.Tests.csproj", "{41FA6762-69E0-44D9-B4BF-AC4624ED87AD}"
