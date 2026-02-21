@@ -5,9 +5,9 @@
         <Product>Read Time Estimator</Product>
         <Title>Read Time Estimator</Title>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Copyright>©2020-2025, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
+        <Copyright>©2020-2026, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
         <PackageTags>dotnet, read-time, estimator, markdown, html</PackageTags>
-        <PackageReleaseNotes>- initial release</PackageReleaseNotes>
+        <PackageReleaseNotes>- minor code clean up and copyright update</PackageReleaseNotes>
         <Description>A tool to determine the estimated read time for HTML or Markdown articles</Description>
         <PackageProjectUrl>https://github.com/bolorundurowb/read-time-estimator</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/bolorundurowb/read-time-estimator/blob/master/LICENSE</PackageLicenseUrl>
@@ -15,7 +15,7 @@
         <RepositoryType>git</RepositoryType>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
-        <Version>1.1.2</Version>
+        <Version>1.1.3</Version>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
