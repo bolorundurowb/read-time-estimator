@@ -35,7 +35,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml
+          dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=../TestResults/coverage.cobertura.xml
         working-directory: ./src
 
       - name: Upload test results
@@ -48,6 +48,6 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./src/TestResults/coverage.cobertura.xml
+          file: ./TestResults/coverage.cobertura.xml
           flags: unittests
           verbose: true
