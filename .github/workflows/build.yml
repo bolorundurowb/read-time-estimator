@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOTNET_VERSION: "8.x"
+      DOTNET_VERSION: "10.x"
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     steps:
@@ -27,13 +27,16 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+        working-directory: ./src
 
       - name: Build the project
         run: dotnet build --configuration Release
+        working-directory: ./src
 
       - name: Run tests with coverage
         run: |
-          dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/coverage.cobertura.xml
+          dotnet test --configuration Release --no-build --logger "trx;LogFileName=test_results.trx" /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=../TestResults/coverage.cobertura.xml
+        working-directory: ./src
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -45,6 +48,6 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./TestResults/coverage.cobertura.xml
+          file: ./src/TestResults/coverage.cobertura.xml
           flags: unittests
           verbose: true

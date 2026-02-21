@@ -1,4 +1,4 @@
-using FluentAssertions;
+using AwesomeAssertions;
 using ReadTimeEstimator.Implementations.Estimators;
 using Xunit;
 

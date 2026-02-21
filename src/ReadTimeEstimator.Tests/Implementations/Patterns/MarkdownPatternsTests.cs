@@ -1,26 +1,26 @@
 using System;
-using FluentAssertions;
+using AwesomeAssertions;
 using ReadTimeEstimator.Implementations.Patterns;
 using Xunit;
 
 namespace ReadTimeEstimator.Tests.Implementations.Patterns;
 
-public class HtmlPatternsTests
+public class MarkdownPatternsTests
 {
     [Fact]
     public void ShouldInstantiatePatternSuccessfully()
     {
-        Action action = () => _ = new HtmlPatterns();
+        Action action = () => _ = new MarkdownPatterns();
         action.Should().NotThrow();
     }
 
     [Fact]
     public void ShouldInstantiatePatternWithExpectedValues()
     {
-        var pattern = new HtmlPatterns();
+        var pattern = new MarkdownPatterns();
         pattern.Should().NotBeNull();
-        pattern.ImagePattern.Should().Be("<(img|Image)([\\w\\W]+?)[\\/]?>");
-        pattern.TagsPattern.Should().Be("<[^>]*>");
+        pattern.ImagePattern.Should().Be("(?:!\\[(.*?)\\]\\((.*?)\\))");
+        pattern.TagsPattern.Should().BeEmpty();
         pattern.WordsPattern.Should().Be("\\w+");
         pattern.EastAsianCharSetPattern.Should()
             .Be("[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]");
