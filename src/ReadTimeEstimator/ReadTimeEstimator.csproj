@@ -6,7 +6,7 @@
         <Title>Read Time Estimator</Title>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Copyright>©2020-2026, Bolorunduro Winner-Timothy. All Rights reserved.</Copyright>
-        <PackageTags>dotnet, read-time, estimator, markdown, html</PackageTags>
+        <PackageTags>dotnet csharp nuget reading-time html markdown text-analysis content netstandard</PackageTags>
         <PackageReleaseNotes>- minor code clean up and copyright update</PackageReleaseNotes>
         <Description>A tool to determine the estimated read time for HTML or Markdown articles</Description>
         <PackageProjectUrl>https://github.com/bolorundurowb/read-time-estimator</PackageProjectUrl>

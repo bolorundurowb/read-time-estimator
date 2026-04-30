@@ -4,7 +4,6 @@
 
 A .NET library that estimates the reading time of HTML and Markdown content, accounting for words, images, code blocks, and East Asian characters.
 
----
 
 ## Installation
 
@@ -20,7 +19,6 @@ Install-Package ReadTimeEstimator
 
 Targets **netstandard2.0**, compatible with .NET Framework 4.6.1+, .NET Core 2.0+, and .NET 5+.
 
----
 
 ## Quick Start
 
@@ -40,7 +38,6 @@ double minutes = htmlEstimator.ReadTimeInMinutes(html);
 string label = markdownEstimator.HumanFriendlyReadTime(markdown);
 ```
 
----
 
 ## API Reference
 
@@ -90,7 +87,6 @@ public class ArticleService(IMarkupEstimator estimator)
 }
 ```
 
----
 
 ## How It Works
 
@@ -111,7 +107,6 @@ The total estimated time is the sum of word read time, image time, and code bloc
 | 0.5–1.5 minutes | `1 minute`           |
 | > 1.5 minutes   | `N minutes`          |
 
----
 
 ## Contributing
 
@@ -140,7 +135,6 @@ src/
 
 Please open an issue before submitting a PR for anything beyond small fixes.
 
----
 
 ## License
 
