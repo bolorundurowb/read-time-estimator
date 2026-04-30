@@ -1,6 +1,6 @@
 # ⏳ Read Time Estimator  
 
-[![Build, Test, and Upload Coverage](https://github.com/bolorundurowb/read-time-estimator/actions/workflows/build.yml/badge.svg)](https://github.com/bolorundurowb/read-time-estimator/actions/workflows/build.yml)  [![Code Coverage](https://codecov.io/gh/bolorundurowb/read-time-estimator/branch/master/graph/badge.svg)](https://codecov.io/gh/bolorundurowb/read-time-estimator)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  ![NuGet Version](https://img.shields.io/nuget/v/ReadTimeEstimator)
+[![Build, Test & Coverage](https://github.com/bolorundurowb/read-time-estimator/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/bolorundurowb/read-time-estimator/actions/workflows/build-and-test.yml)  [![Code Coverage](https://codecov.io/gh/bolorundurowb/read-time-estimator/branch/master/graph/badge.svg)](https://codecov.io/gh/bolorundurowb/read-time-estimator)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  ![NuGet Version](https://img.shields.io/nuget/v/ReadTimeEstimator)
  
 
 📖 **Read Time Estimator** is a library that provides an accurate estimate of the read time for an article in **HTML** or **Markdown**.

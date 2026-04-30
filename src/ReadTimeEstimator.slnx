@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ReadTimeEstimator.Tests/ReadTimeEstimator.Tests.csproj" />
+  <Project Path="ReadTimeEstimator/ReadTimeEstimator.csproj" />
+</Solution>
